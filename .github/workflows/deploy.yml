@@ -20,7 +20,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+       pip install -r "Prediction Future Crop/requirements.txt"
+
 
     - name: Run model test (optional)
       run: |
