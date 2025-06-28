@@ -1,0 +1,6 @@
+tensorflow==2.14.0
+flask==2.3.2
+numpy
+pillow
+h5py
+gunicorn
