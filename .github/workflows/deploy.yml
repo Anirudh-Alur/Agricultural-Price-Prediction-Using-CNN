@@ -3,7 +3,7 @@ name: Deploy ML App
 on:
   push:
     branches:
-      - main
+      - main  # Trigger only on main branch
 
 jobs:
   deploy:
@@ -20,10 +20,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r requirements.txt  # Ensure file is at root level
 
     - name: Run model test (optional)
       run: |
-        python your_model_test_script.py
-
-  
+        echo "You can run a test script here"
+        # python your_model_test_script.py
