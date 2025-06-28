@@ -5,25 +5,27 @@ on:
     branches:
       - main  # Trigger only on main branch
 
+  workflow_dispatch:  # Optional: allows manual trigger via "Run workflow" button
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-       pip install -r "Prediction Future Crop/requirements.txt"
+      - name: Install dependencies
+        run: |
+          pip install -r "Prediction Future Crop/requirements.txt"
 
+      - name: Run model test (optional)
+        run: |
+          echo "You can run a model test or start your app here"
+          # python app.py
 
-    - name: Run model test (optional)
-      run: |
-        echo "You can run a model test or start your app here"
-        # python app.py  <-- only if testing, not for actual deployment
